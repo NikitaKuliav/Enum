@@ -11,7 +11,8 @@ public class Main {
                     "Auto brand #" + i,
                     "Auto model #" + i,
                     2.0,
-                    driverB
+                    driverB, BodyType.COUPE,
+                    Type.CAR
             );
             DriverC driverC = new DriverC("категории С  № " + i,
                     true,
@@ -20,7 +21,9 @@ public class Main {
                     "Truck brand #" + i,
                     "Truck model #" + i,
                     6.5,
-                    driverC
+                    driverC,
+                    LoadCapacity.getValue(11.0),
+                    Type.CAR
             );
             DriverD driverD = new DriverD("категории D  № " + i,
                     true,
@@ -30,15 +33,35 @@ public class Main {
                     "Bus brand #" + i,
                     "bus model #" + i,
                     4.5,
-                    driverD
+                    driverD,
+                    Size.getValue(26),
+                    Type.BUS
                     );
             printInfo(auto);
             printInfo(bus);
             printInfo(truck);
         }
+        Auto mercedes = new Auto("Mercedes", "cla 200", 2.0, new DriverB("Mihail", true, 6), BodyType.SEDAN, Type.CAR);
+        Auto audi = new Auto("audi", "a8", 2.0, new DriverB("Alex", true, 7), null, Type.CAR);
+
+
+//        System.out.println(mercedes.getBodyType());
+//        mercedes.printType();
+//        System.out.println(audi.getBodyType());
+//        audi.printType();
+//
+          Truck scania = new Truck("Scania", "250", 4,new DriverC("Denis", true, 10), LoadCapacity.getValue(null), Type.TRUCK);
+          scania.printType();
+          Bus ikarus = new Bus("Ikarus", "202", 4.3, new DriverD("Max", true, 12), Size.getValue(null), Type.BUS);
+          ikarus.printType();
+
+
+
+
+
 
     }
     private static void printInfo(Transport<?> transport){
-        System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
+        System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " с характеристикой "+  "и будет участвовать в заезде");
     }
 }

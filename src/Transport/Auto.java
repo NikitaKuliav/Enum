@@ -1,14 +1,23 @@
 package Transport;
 
 public class Auto extends Transport<DriverB> {
-
+    private BodyType bodyType;
+    private Type type;
     public Auto(String brand,
                 String model,
                 double engineVolume,
-                DriverB driver) {
+                DriverB driver,
+                BodyType bodyType,
+                Type type) {
         super(brand, model, engineVolume, driver);
+        setBodyType(bodyType);
     }
 
+    @Override
+    public void printType() { if (getBodyType() != null) {
+        System.out.println(getBodyType());
+    } else System.out.println("Данных по транспортному средству недостаточно");
+    }
     @Override
     public void startMove() {
         System.out.println("Автомобиль марки " + getBrand() + " начал двигаться ");
@@ -39,5 +48,16 @@ public class Auto extends Transport<DriverB> {
         int maxSpeed = (int) (minBound + (maxBound - minBound) + Math.random());
         System.out.println("Максимальная скорость для автомобиля " + maxSpeed);
 
+    }
+    public BodyType getBodyType(){
+        return bodyType;
+    }
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
+
+    @Override
+    public Type getType() {
+        return type;
     }
 }
