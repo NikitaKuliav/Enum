@@ -10,7 +10,7 @@ public enum Size {
     private int min;
     private int max;
 
-    Size(int min, int max) {
+    Size(Integer min, Integer max) {
         this.min = min;
         this.max = max;
     }
@@ -25,9 +25,11 @@ public enum Size {
     public int getMax() {
         return max;
     }
-    public static Size getValue(int value){
+    public static Size getValue(Integer value){
         for (Size e : Size.values()){
-            if (value >= e.getMin() && value <= e.getMax()){
+            if (value == null) {
+                return XS;
+            } else if (value >= e.getMin() && value <= e.getMax()){
                 System.out.println(e);
                 return e;
             }

@@ -1,21 +1,23 @@
 package Transport;
 
 public enum BodyType {
-    SEDAN,
-    HATCHBACK,
-    COUPE,
-    UNIVERSAL,
-    SUV,
-    CROSSOVER,
-    PICKUP,
-    VAN,
-    MINIVAN;
+    SEDAN("Седан"),
+    HATCHBACK("Хэтчбэк"),
+    COUPE("Купе"),
+    UNIVERSAL("Универсал"),
+    SUV("Внедорожник"),
+    CROSSOVER("Кроссовер"),
+    PICKUP("Пикап"),
+    VAN("Микроавтобус"),
+    MINIVAN("Микроавтобус");
 
-    BodyType() {
+    private String description;
+    BodyType(String description) {
+        this.description = description;
     }
 
     @Override
     public String toString() {
-        return "Тип кузова: " + super.toString();
+        return "Тип кузова: " + this.description;
     }
 }

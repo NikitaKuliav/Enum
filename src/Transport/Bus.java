@@ -2,11 +2,13 @@ package Transport;
 
 public class Bus extends Transport<DriverD> {
     private Size size;
+    private Type type;
     public Bus(String brand,
                String model,
                double engineVolume,
                DriverD driver,
-               Size size) {
+               Size size,
+               Type type) {
         super(brand, model, engineVolume, driver);
         setSize(size);
     }
@@ -55,5 +57,10 @@ public class Bus extends Transport<DriverD> {
     }
     public void setSize(Size size) {
         this.size = size;
+    }
+
+    @Override
+    public Type getType() {
+        return null;
     }
 }

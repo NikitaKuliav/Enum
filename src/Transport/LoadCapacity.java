@@ -1,14 +1,14 @@
 package Transport;
 
 public enum LoadCapacity {
-    N1(0, 3.5),
-    N2(3.6, 12),
-    N3(13, 500);
+    N1(0.0, 3.5),
+    N2(3.6, 12.0),
+    N3(13.0, 500.0);
 
-    private double min;
-    private double max;
+    private Double min;
+    private Double max;
 
-    LoadCapacity(double min, double max){
+    LoadCapacity(Double min, Double max){
         this.min = min;
         this.max = max;
     }
@@ -16,21 +16,24 @@ public enum LoadCapacity {
 
     }
 
-    public double getMin() {
+    public Double getMin() {
         return min;
     }
 
-    public double getMax() {
+    public Double getMax() {
         return max;
     }
-    public static LoadCapacity getValue(double value){
+    public static LoadCapacity getValue(Double value){
         for (LoadCapacity e : LoadCapacity.values()) {
-            if (value >= e.getMin() && value <= e.getMax()) {
+            if (value == null) {
+                return N1;
+            } else if (value >= e.getMin() && value <= e.getMax()){
+
 //                System.out.println(e);
                 return e;
             }
-        }
-        return null;
+        }return N1;
+
     }
 
     @Override

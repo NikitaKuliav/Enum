@@ -2,11 +2,13 @@ package Transport;
 
 public class Truck extends Transport<DriverC> {
     private LoadCapacity loadCapacity;
+    private Type type;
     public Truck(String brand,
                  String model,
                  double engineVolume,
                  DriverC driver,
-                 LoadCapacity loadCapacity) {
+                 LoadCapacity loadCapacity,
+                 Type type) {
         super(brand, model, engineVolume, driver);
         setLoadCapacity(loadCapacity);
     }
@@ -55,6 +57,11 @@ public class Truck extends Transport<DriverC> {
 
     public void setLoadCapacity(LoadCapacity loadCapacity) {
         this.loadCapacity = loadCapacity;
+    }
+
+    @Override
+    public Type getType() {
+        return this.type;
     }
 }
 
