@@ -46,7 +46,7 @@ public class Main {
 
 
 //        System.out.println(mercedes.getBodyType());
-//        mercedes.printType();
+        mercedes.printType();
 //        System.out.println(audi.getBodyType());
 //        audi.printType();
 //

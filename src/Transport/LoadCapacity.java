@@ -8,11 +8,12 @@ public enum LoadCapacity {
     private Double min;
     private Double max;
 
-    LoadCapacity(Double min, Double max){
+    LoadCapacity(Double min, Double max) {
         this.min = min;
         this.max = max;
     }
-    LoadCapacity(){
+
+    LoadCapacity() {
 
     }
 
@@ -23,22 +24,30 @@ public enum LoadCapacity {
     public Double getMax() {
         return max;
     }
-    public static LoadCapacity getValue(Double value){
+
+    public static LoadCapacity getValue(Double value) {
         for (LoadCapacity e : LoadCapacity.values()) {
             if (value == null) {
                 return N1;
-            } else if (value >= e.getMin() && value <= e.getMax()){
+            } else if (value >= e.getMin() && value <= e.getMax()) {
 
 //                System.out.println(e);
                 return e;
             }
-        }return N1;
+        }
+        return N1;
 
     }
 
     @Override
     public String toString() {
-        return "min=" + min +
-                ", max=" + max;
+        if (min == null) {
+            return "min= 0, max= 3.5";
+        } else if (max == null) {
+            return "min= 13, max= 500";
+        }else {
+            return "min=" + min +
+                    ", max=" + max;
+        }
     }
 }

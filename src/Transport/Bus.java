@@ -15,7 +15,7 @@ public class Bus extends Transport<DriverD> {
 
     @Override
     public void printType() { if (getSize() != null) {
-        System.out.println("Вместимость: " + getSize());
+        System.out.println(Type.BUS);
     } else System.out.println("Данных по транспортному средству недостаточно");
 
     }
@@ -61,6 +61,6 @@ public class Bus extends Transport<DriverD> {
 
     @Override
     public Type getType() {
-        return null;
+        return Type.BUS;
     }
 }

@@ -16,7 +16,7 @@ public class Truck extends Transport<DriverC> {
 
     @Override
     public void printType() { if (getloadCapacity() != null) {
-        System.out.println("Грузоподъемность: " + getloadCapacity());
+        System.out.println(Type.TRUCK);
     } else System.out.println("Данных по транспортному средству недостаточно");
     }
 
@@ -61,7 +61,7 @@ public class Truck extends Transport<DriverC> {
 
     @Override
     public Type getType() {
-        return this.type;
+        return Type.TRUCK;
     }
 }
 

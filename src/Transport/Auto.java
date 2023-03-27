@@ -15,7 +15,7 @@ public class Auto extends Transport<DriverB> {
 
     @Override
     public void printType() { if (getBodyType() != null) {
-        System.out.println(getBodyType());
+        System.out.println(Type.CAR);
     } else System.out.println("Данных по транспортному средству недостаточно");
     }
     @Override

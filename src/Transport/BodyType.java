@@ -18,6 +18,9 @@ public enum BodyType {
 
     @Override
     public String toString() {
+        if (this.description == null) {
+            System.out.println("Данных недостаточно");
+        }
         return "Тип кузова: " + this.description;
     }
 }
